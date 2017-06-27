@@ -26,13 +26,15 @@
 ***mixedCards*** - массив объектов(карточек) с данными об отрезке маршрута</br>
 ***response*** -отсортированный список маршрутов в виде массива </br>
 ***err*** - описание ошибки </br>
-```let cards = new Cards();
-		cards.createTravelDescription(mixedCards).then(responce => {
-			console.log("Отсортированный список карточек: ");
-			responce.forEach(card => {
-				console.log(card);
-			});
-		}).catch(err => {
-			console.log(`${err}`)
+```
+let cards = new Cards();
+	cards.createTravelDescription(mixedCards).then(response => {
+		response.forEach(card => {
+			var p = document.createElement("p");
+			p.innerHTML = card;
+			document.getElementById('result').appendChild(p);
 		});
+	}).catch(err => {
+	console.log(`${err}`)
+});
 ```
