@@ -30,7 +30,7 @@ class Cards {
 	createTravelDescription(mixedCards){
 		return new Promise((resolve, reject) => {
 			try{ 
-				this.cards = mixedCards;
+			 	this.cards = mixedCards;
 			}	catch(err) {
 				reject(err.toString());
 			}
@@ -40,16 +40,16 @@ class Cards {
 		this.cards.forEach(card => {
 			let tripInfo = "";
 			switch(card.transport){
-	  	  case 'train':
-	       	tripInfo = `Take train ${card.transport_info.route} from ${card.departure.name} to ${card.destination.name}. Seat: ${card.transport_info.seat}.${card.transport_info.notes}`;
-	      break;
-	  	  case 'airport bus':
-	  	    tripInfo =`Take the airport bus from ${card.departure.name} to ${card.destination.name}. Seat: ${card.transport_info.seat}.${card.transport_info.notes}`;
-	      break;
-	  		case 'plane':
-	  			tripInfo =`From ${card.departure.name}, take flight ${card.transport_info.flight} to ${card.destination.name}. Gate: ${card.transport_info.gate}. Seat: ${card.transport_info.seat}.${card.transport_info.notes}`;
-	      break;
-	  	}
+			  case 'train':
+				tripInfo = `Take train ${card.transport_info.route} from ${card.departure.name} to ${card.destination.name}. Seat: ${card.transport_info.seat}.${card.transport_info.notes}`;
+			  break;
+			  case 'airport bus':
+				tripInfo =`Take the airport bus from ${card.departure.name} to ${card.destination.name}. Seat: ${card.transport_info.seat}.${card.transport_info.notes}`;
+			  break;
+			  case 'plane':
+					tripInfo =`From ${card.departure.name}, take flight ${card.transport_info.flight} to ${card.destination.name}. Gate: ${card.transport_info.gate}. Seat: ${card.transport_info.seat}.${card.transport_info.notes}`;
+			  break;
+			}
 			this.description.push(tripInfo);
 		});
 		resolve(this.description);
