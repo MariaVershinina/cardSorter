@@ -81,9 +81,9 @@
 		];	
 			
 		let cards = new Cards();
-		cards.createTravelDescription(mixedCards).then(responce => {
+		cards.createTravelDescription(mixedCards).then(response => {
 			console.log("Отсортированный список карточек: ");
-			responce.forEach(card => {
+			response.forEach(card => {
 				console.log(card);
 			});
 		}).catch(err => {
