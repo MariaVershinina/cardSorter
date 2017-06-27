@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- <link rel="stylesheet" href="css/style.css"> -->
+	<script src="sorter.js" type="text/javascript"></script>
+	<title>Travel Card Sorter</title>
+</head>
+<body>
+	<h1>Cортировщик карточек путешественника</h1>
+	<p>Результат работы выводится в консоли.</p>
+	<script type="text/javascript">
+	var mixedCards=[
+		{ 
+			"departure": {
+				"name": "Barcelona",
+				"location": {}
+			},
+			"destination": { 
+				"name": "Gerona Airport",
+				"location": {}
+			},
+			"transport": "airport bus",
+			"transport_info": {
+				"route" : "122",
+				"seat" : "No seat assignment",
+        "notes": ""
+			}
+		},
+		{ 
+			"departure": {
+				"name": "Stockholm",
+				"location": {}
+			},
+			"destination": { 
+				"name": "New York JFK",
+				"location": {}
+			},
+			"transport": "plane",
+			"transport_info": {
+        "flight": "SK22",
+        "gate": "22",
+        "seat": "7B",
+        "baggage_drop": "",
+        "notes": "Baggage will be automatically transferred from your last leg."
+			}
+		},
+		{ 
+			"departure": {
+				"name": "Madrid",
+				"location": {}
+			},
+			"destination": { 
+				"name": "Barcelona",
+				"location": {}
+			},
+			"transport": "train",
+			"transport_info": {
+				"route" : "78A",
+				"seat" : "85",
+				"notes": ""
+			}
+		},
+		{ 
+			"departure": {
+				"name": "Gerona Airport",
+				"location": {}
+			},
+			"destination": { 
+				"name": "Stockholm",
+				"location": {}
+			},
+			"transport": "plane",
+			"transport_info": {
+				"flight": "SK455",
+        "gate": "45B",
+        "seat": "3A",
+        "baggage_drop": "344",
+        "notes": "Baggage drop at ticket counter 344."
+			}
+		}
+		];	
+			
+		let cards = new Cards();
+		cards.createTravelDescription(mixedCards).then(responce => {
+			console.log("Отсортированный список карточек: ");
+			responce.forEach(card => {
+				console.log(card);
+			});
+		}).catch(err => {
+			console.log(`${err}`)
+		});
+	</script>
+</body>
+</html>
