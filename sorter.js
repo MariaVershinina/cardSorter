@@ -20,10 +20,10 @@ class Cards {
 			"transport": "тип транспорта",
 			"transport_info": { (информация о транспорте) отличается для разных типов транспорта
 				"flight": "SK455",
-        "gate": "45B",
-        "seat": "3A",
-        "baggage_drop": "344",
-        "notes": "Baggage drop at ticket counter 344."  доп. информация
+			"gate": "45B",
+			"seat": "3A",
+			"baggage_drop": "344",
+			"notes": "Baggage drop at ticket counter 344."  доп. информация
 			}
 	}
 	*/
