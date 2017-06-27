@@ -7,7 +7,8 @@
 </head>
 <body>
 	<h1>Cортировщик карточек путешественника</h1>
-	<p>Результат работы выводится в консоли.</p>
+	<h2>Отсортированный список карточек.</h2>
+	<div id="result"></div>
 	<script type="text/javascript">
 	var mixedCards=[
 		{ 
@@ -82,9 +83,10 @@
 			
 		let cards = new Cards();
 		cards.createTravelDescription(mixedCards).then(response => {
-			console.log("Отсортированный список карточек: ");
 			response.forEach(card => {
-				console.log(card);
+				var p = document.createElement("p");
+				p.innerHTML = card;
+				document.getElementById('result').appendChild(p);
 			});
 		}).catch(err => {
 			console.log(`${err}`)
